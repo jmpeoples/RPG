@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+namespace RPG.Movement
+{
 public class Move : MonoBehaviour
 {
     [SerializeField] Transform target;
@@ -29,4 +31,5 @@ public class Move : MonoBehaviour
         float speed = localVelocity.z;
         GetComponent<Animator>().SetFloat("forwardSpeed", speed);
     }
+}
 }
