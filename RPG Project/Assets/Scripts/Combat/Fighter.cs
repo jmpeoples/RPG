@@ -1,12 +1,40 @@
 using UnityEngine;
-
+using RPG.Movement;
+using RPG.Core;
 
 namespace RPG.Combat{
     public class Fighter : MonoBehaviour
     {
-        public void Attack(CombatTarget target)
+
+        Transform target;
+        [SerializeField] float weaponRange = 2f;
+        private void Update()
         {
-            print("Take that you shot squat monster!");
+            if (target == null) return; 
+
+            if (target != null && !GetIsInRange())
+            {
+                GetComponent<Move>().MoveTo(target.position);
+            }
+            else
+            {
+                GetComponent<Move>().Stop();
+            }
+        }
+
+        private bool GetIsInRange()
+        {
+            return Vector3.Distance(transform.position, target.position) < weaponRange;
+        }
+
+        public void Attack(CombatTarget combatTarget)
+        {
+           GetComponent<ActionScheduler>().StartAction(this);
+           target = combatTarget.transform;
+        }
+
+        public void Cancel(){
+            target = null;
         }
     }
 }

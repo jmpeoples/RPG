@@ -1831,3 +1831,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d597d0b3f892845aba69ca0a315e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponRange: 2
+--- !u!114 &8273614563806694511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8273614563806694509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2def961b92a6e24ea3410c0077739cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
